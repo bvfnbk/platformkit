@@ -1,0 +1,3 @@
+# oskit
+
+Operating system detection.
