@@ -13,14 +13,22 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+
+    // Test
+    testImplementation(kotlin("test"))
+    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
 }
 
 val compileKotlin: KotlinCompile by tasks
+val compileTestKotlin: KotlinCompile by tasks
+val test: Test by tasks
+
 compileKotlin.kotlinOptions {
     jvmTarget = "16"
 }
 
-val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
     jvmTarget = "16"
 }
+
+test.useJUnitPlatform()
