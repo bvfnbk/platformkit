@@ -18,8 +18,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/bvfnbk/oskit")
             credentials {
-                username = project.properties.getOrDefault("gpr.user", System.getenv("USERNAME")) as String
-                password = project.properties.getOrDefault("gpr.key", System.getenv("TOKEN")) as String
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
             }
         }
     }
