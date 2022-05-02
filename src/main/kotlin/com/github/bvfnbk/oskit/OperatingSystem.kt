@@ -5,8 +5,6 @@ import com.github.bvfnbk.oskit.error.UnknownOperatingSystemError
 
 /**
  * An enumeration of all supported operating systems.
- *
- * @author bvfnbk
  */
 enum class OperatingSystem {
     LINUX,
@@ -71,11 +69,12 @@ enum class OperatingSystem {
          */
         private fun lookup(name: String): OperatingSystem = when (name) {
             in nameOperatingSystemMap -> nameOperatingSystemMap[name]!!
-            else     -> throw UnknownOperatingSystemError(name)
+            else                      -> throw UnknownOperatingSystemError(name)
         }
 
         /**
          * Gets the [OperatingSystem] of the current platform.
+         *
          * @return the [OperatingSystem] of the current platform.
          * @throws UnknownOperatingSystemError if the [OperatingSystem] is not known.
          * @throws RequiredSystemPropertyMissingError if the system properties do not contain the `os.name` property.
