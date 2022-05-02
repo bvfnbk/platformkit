@@ -8,13 +8,12 @@
 name: Java CI with Gradle
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  release:
+    types:
+      - published
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,8 +22,12 @@ jobs:
         with:
           java-version: '16'
           distribution: 'temurin'
-      - name: Build with Gradle
+      - name: Publish with Gradle
         uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
         with:
-          arguments: build
+          arguments: publish
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
+
+
 

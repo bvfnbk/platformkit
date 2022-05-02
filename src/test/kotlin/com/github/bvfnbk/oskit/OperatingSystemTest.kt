@@ -14,9 +14,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
 import java.util.*
 
-/**
- * @author bvfnbk
- */
 internal class OperatingSystemTest {
     var originalProperties: Properties? = null
     var testProperties: Properties? = null
@@ -43,8 +40,8 @@ internal class OperatingSystemTest {
         ).map { (name, expected) ->
             dynamicTest(
                 "Given os.name \"$name\" " +
-                        "When retrieving the operating system " +
-                        "Then it should return OperatingSystem.$expected"
+                    "When retrieving the operating system " +
+                    "Then it should return OperatingSystem.$expected"
             ) {
                 testProperties!!["os.name"] = name
                 val actual = OperatingSystem.get()
@@ -54,10 +51,9 @@ internal class OperatingSystemTest {
 
     @Test
     fun `A missing system property throws an RequiredSystemPropertyMissingError`() {
-        assertThat {
-            // simply forget setting the os.name
-            OperatingSystem.get()
-        }.isFailure().isInstanceOf(RequiredSystemPropertyMissingError::class)
+        assertThat { OperatingSystem.get() }
+            .isFailure()
+            .isInstanceOf(RequiredSystemPropertyMissingError::class)
             .prop(RequiredSystemPropertyMissingError::key)
             .isEqualTo("os.name")
     }
@@ -71,12 +67,6 @@ internal class OperatingSystemTest {
         }.isFailure()
             .isInstanceOf(UnknownOperatingSystemError::class)
             .prop(UnknownOperatingSystemError::name)
-            /*
-             * ...tried to turn this test red by setting an (un-)expected value in order to assert that this test is no
-             * false positive - which causes this test to run forever (?) or at least until aborted.
-             *
-             * Not sure what causes this and what to do about it.
-             */
             .isEqualTo(invalidOsName)
     }
 }
