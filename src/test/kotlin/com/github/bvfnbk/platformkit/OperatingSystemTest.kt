@@ -1,12 +1,12 @@
-package com.github.bvfnbk.oskit
+package com.github.bvfnbk.platformkit
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isFailure
 import assertk.assertions.isInstanceOf
 import assertk.assertions.prop
-import com.github.bvfnbk.oskit.error.RequiredSystemPropertyMissingError
-import com.github.bvfnbk.oskit.error.UnknownOperatingSystemError
+import com.github.bvfnbk.platformkit.error.RequiredSystemPropertyMissingError
+import com.github.bvfnbk.platformkit.error.UnknownOperatingSystemError
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DynamicTest.dynamicTest
