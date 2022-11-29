@@ -1,1 +1,1 @@
-rootProject.name = "oskit"
+rootProject.name = "platformkit"
