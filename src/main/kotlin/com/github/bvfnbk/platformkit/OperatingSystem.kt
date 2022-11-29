@@ -1,7 +1,7 @@
-package com.github.bvfnbk.oskit
+package com.github.bvfnbk.platformkit
 
-import com.github.bvfnbk.oskit.error.RequiredSystemPropertyMissingError
-import com.github.bvfnbk.oskit.error.UnknownOperatingSystemError
+import com.github.bvfnbk.platformkit.error.RequiredSystemPropertyMissingError
+import com.github.bvfnbk.platformkit.error.UnknownOperatingSystemError
 
 /**
  * An enumeration of all supported operating systems.

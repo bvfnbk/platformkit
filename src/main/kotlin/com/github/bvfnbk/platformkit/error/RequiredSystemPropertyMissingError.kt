@@ -1,4 +1,4 @@
-package com.github.bvfnbk.oskit.error
+package com.github.bvfnbk.platformkit.error
 
 /**
  * A [RuntimeException] to be thrown if a required [System] property is `null`.
