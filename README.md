@@ -1,16 +1,20 @@
-# oskit
+# platformkit
 
-![example workflow](https://github.com/bvfnbk/oskit/actions/workflows/gradle.yml/badge.svg?branch=main)
-![example workflow](https://github.com/bvfnbk/oskit/actions/workflows/detekt.yml/badge.svg?branch=main)
+![CI](https://github.com/bvfnbk/platformkit/actions/workflows/gradle.yml/badge.svg?branch=main)
+![DETEKT](https://github.com/bvfnbk/platformkit/actions/workflows/detekt.yml/badge.svg?branch=main)
 
 
-Operating system detection; biased. This (very) little API can be used to detect the operating system the JVM is running
-on. Its focus is not to detect _all_ possible operating systems but is limited to the main desktop application
-environments
+Operating system and CPU architecture detection; biased. This (very) little API can be used to detect the operating
+system and CPU architecture the JVM is running on. Its focus is not to detect _all_ possible operating systems but is
+limited to the main desktop application environments
 
 * Linux,
 * Mac OS X and
 * Windows.
+
+> **Open Issues:**
+>
+> Document/implement architecture "detection".
 
 ## Why not use `System.getProperty("os.name")`?
 
@@ -24,7 +28,7 @@ _write this when releasing is done_
 ## Usage
 
 ```kotlin
-import com.github.bvfnbk.oskit.OperatingSystem
+import com.github.bvfnbk.platformkit.OperatingSystem
 
 OperatingSystem.get()
 ```
