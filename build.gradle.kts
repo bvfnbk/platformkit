@@ -16,7 +16,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/bvfnbk/oskit")
+            url = uri("https://maven.pkg.github.com/bvfnbk/platformkit")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
